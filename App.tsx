@@ -262,9 +262,16 @@ const App: React.FC = () => {
 
       for (const char of addedChars) {
         if (char === '.') {
-          // '.' exits hidden mode and completes the petition
+          // '.' exits hidden mode — advance display by one more char (smooth transition)
+          const newDisplay = PETITION_PHRASE.substring(0, hiddenAnswerRef.current.length + 2);
           setIsHiding(false);
-          setPetitionDisplay(PETITION_PHRASE);
+          setPetitionDisplay(newDisplay);
+          requestAnimationFrame(() => {
+            const input = petitionInputRef.current;
+            if (input) {
+              input.setSelectionRange(newDisplay.length, newDisplay.length);
+            }
+          });
           return;
         }
         // Add character to hidden answer
