@@ -465,6 +465,7 @@ body {
 }
 
 /* --- Proxy Input (Ghost Mode) --- */
+/* --- Proxy Input (Ghost Mode) --- */
 .input-wrapper {
     position: relative;
     width: 100%;
@@ -474,20 +475,19 @@ body {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    /* Match input box model exactly: fixed height, horizontal padding only */
-    height: 3.5rem;
-    padding: 0.2rem 1.1rem 0 1.1rem;
-    /* Add top padding to visually center Courier text */
+    /* Match input padding exactly (horizontal only), let flex handle vertical */
+    padding: 0 1.1rem;
     border: 1px solid transparent;
 
     /* Text alignment */
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.95rem;
     line-height: normal;
+    /* Reset line-height */
     color: var(--text-primary);
     z-index: 5;
 
-    /* Re-enable flex for perfect vertical centering */
+    /* Robust vertical centering */
     display: flex;
     align-items: center;
     white-space: pre;
