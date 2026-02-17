@@ -92,15 +92,21 @@ const PetitionInput: React.FC<PetitionInputProps> = ({
   };
 
   return (
-    <div className="form-group">
+    <div className="form-group input-wrapper">
       <label htmlFor="petition" className="form-label">Petition</label>
+
+      {/* Proxy Display (Visual Text) */}
+      <div className="proxy-display" aria-hidden="true">
+        {petitionDisplay || (!isHiding && !showAnswer ? "Begin your petition..." : "")}
+      </div>
+
+      {/* Real Input (Password Type to kill suggestions) */}
       <input
         ref={inputRef}
         id="petition"
-        name="petition_field_no_suggest"
-        type="text"
-        placeholder="Begin your petition..."
-        className={`form-input ${isHiding ? 'hiding-glow' : ''}`}
+        name="petition_field_secure"
+        type="password"
+        className={`form-input real-password-input ${isHiding ? 'hiding-glow' : ''}`}
         value={petitionDisplay}
         onChange={handleChange}
         disabled={showAnswer}
@@ -109,8 +115,6 @@ const PetitionInput: React.FC<PetitionInputProps> = ({
         autoCapitalize="off"
         spellCheck={false}
         data-lpignore="true"
-        data-form-type="other"
-        aria-autocomplete="none"
       />
     </div>
   );

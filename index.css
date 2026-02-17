@@ -428,6 +428,9 @@ body {
     transition: all 0.3s ease;
     appearance: none;
     -webkit-appearance: none;
+    /* Important for cursor alignment in proxy mode */
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: normal;
 }
 
 .form-input::placeholder {
@@ -456,6 +459,42 @@ body {
     50% {
         box-shadow: 0 0 35px rgba(0, 240, 255, 0.35), 0 0 0 4px rgba(0, 240, 255, 0.2);
     }
+}
+
+/* --- Proxy Input (Ghost Mode) --- */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.proxy-display {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    padding: 0.85rem 1.1rem;
+    /* Must match input padding exactly */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    white-space: pre;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.real-password-input {
+    position: relative;
+    z-index: 10;
+    color: transparent;
+    caret-color: var(--cyan);
+    background: transparent;
+    /* Let proxy show through */
+}
+
+.real-password-input::selection {
+    background: rgba(0, 240, 255, 0.3);
+    color: transparent;
 }
 
 /* --- Ask Button --- */
