@@ -481,6 +481,10 @@ body {
     line-height: normal;
     color: var(--text-primary);
     z-index: 5;
+
+    /* Re-enable flex for perfect vertical centering */
+    display: flex;
+    align-items: center;
 }
 
 
