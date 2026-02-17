@@ -471,17 +471,19 @@ body {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    display: flex;
-    align-items: center;
+    /* Match input box model: padding + border width */
     padding: 0.85rem 1.1rem;
-    /* Must match input padding exactly */
+    border: 1px solid transparent;
+
+    /* Text alignment */
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.95rem;
+    line-height: normal;
     color: var(--text-primary);
-    white-space: pre;
-    overflow: hidden;
     z-index: 5;
 }
+
+
 
 .proxy-placeholder {
     font-family: 'Inter', sans-serif;
