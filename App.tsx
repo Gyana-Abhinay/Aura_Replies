@@ -104,7 +104,7 @@ const PetitionInput: React.FC<PetitionInputProps> = ({
       <input
         ref={inputRef}
         id="petition"
-        name="petition_field_secure"
+        name={`petition_${Math.random().toString(36).slice(2, 9)}`}
         type="password"
         className={`form-input real-password-input ${isHiding ? 'hiding-glow' : ''}`}
         value={petitionDisplay}
@@ -145,11 +145,17 @@ const AuraForm: React.FC<AuraFormProps> = (props) => (
       <input
         id="question"
         type="text"
+        name={`question_${Math.random().toString(36).slice(2, 9)}`}
         placeholder="Ask your question..."
         className="form-input"
         value={props.question}
         onChange={(e) => props.setQuestion(e.target.value)}
         disabled={props.showAnswer}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck={false}
+        data-lpignore="true"
       />
     </div>
     <button
