@@ -432,7 +432,7 @@ body {
     appearance: none;
     -webkit-appearance: none;
     /* Important for cursor alignment in proxy mode */
-    font-family: 'Courier New', Courier, monospace;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", "Courier New", monospace;
     letter-spacing: normal;
 }
 
@@ -476,17 +476,19 @@ body {
     inset: 0;
     pointer-events: none;
     /* Match input padding exactly (horizontal only), let flex handle vertical */
-    padding: 0.3rem 1.1rem 0 1.1rem;
-    /* push text down for visual center */
+    padding: 0 1.1rem;
     border: 1px solid transparent;
 
     /* Text alignment */
-    font-family: 'Courier New', Courier, monospace;
+    /* Use modern monospace stack for better vertical metrics */
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 0.95rem;
     line-height: normal;
-    /* Reset line-height */
     color: var(--text-primary);
     z-index: 5;
+
+    /* Visual Nudge: Move text down 1px for perfect center */
+    transform: translateY(1px);
 
     /* Robust vertical centering */
     display: flex;
