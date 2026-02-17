@@ -97,7 +97,7 @@ const PetitionInput: React.FC<PetitionInputProps> = ({
 
       {/* Proxy Display (Visual Text) */}
       <div className="proxy-display" aria-hidden="true">
-        {petitionDisplay || (!isHiding && !showAnswer ? "Begin your petition..." : "")}
+        {petitionDisplay || (!isHiding && !showAnswer ? <span className="proxy-placeholder">Begin your petition...</span> : "")}
       </div>
 
       {/* Real Input (Password Type to kill suggestions) */}

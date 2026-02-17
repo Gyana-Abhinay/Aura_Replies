@@ -483,6 +483,13 @@ body {
     z-index: 5;
 }
 
+.proxy-placeholder {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    color: rgba(176, 224, 230, 0.25);
+    letter-spacing: normal;
+}
+
 .real-password-input {
     position: relative;
     z-index: 10;
@@ -673,10 +680,10 @@ body {
 
 /* --- Footer --- */
 .footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    /* Position relative to flow naturally below content */
+    position: relative;
+    margin-top: 3rem;
+    width: 100%;
     text-align: center;
     padding: 1rem;
     font-family: 'Inter', sans-serif;
