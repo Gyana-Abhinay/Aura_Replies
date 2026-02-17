@@ -92,30 +92,32 @@ const PetitionInput: React.FC<PetitionInputProps> = ({
   };
 
   return (
-    <div className="form-group input-wrapper">
+    <div className="form-group">
       <label htmlFor="petition" className="form-label">Petition</label>
 
-      {/* Proxy Display (Visual Text) */}
-      <div className="proxy-display" aria-hidden="true">
-        {petitionDisplay || (!isHiding && !showAnswer ? <span className="proxy-placeholder">Begin your petition...</span> : "")}
-      </div>
+      <div className="input-wrapper">
+        {/* Proxy Display (Visual Text) */}
+        <div className="proxy-display" aria-hidden="true">
+          {petitionDisplay || (!isHiding && !showAnswer ? <span className="proxy-placeholder">Begin your petition...</span> : "")}
+        </div>
 
-      {/* Real Input (Password Type to kill suggestions) */}
-      <input
-        ref={inputRef}
-        id="petition"
-        name={`petition_${Math.random().toString(36).slice(2, 9)}`}
-        type="password"
-        className={`form-input real-password-input ${isHiding ? 'hiding-glow' : ''}`}
-        value={petitionDisplay}
-        onChange={handleChange}
-        disabled={showAnswer}
-        autoComplete="one-time-code"
-        autoCorrect="off"
-        autoCapitalize="off"
-        spellCheck={false}
-        data-lpignore="true"
-      />
+        {/* Real Input (Password Type to kill suggestions) */}
+        <input
+          ref={inputRef}
+          id="petition"
+          name={`petition_${Math.random().toString(36).slice(2, 9)}`}
+          type="password"
+          className={`form-input real-password-input ${isHiding ? 'hiding-glow' : ''}`}
+          value={petitionDisplay}
+          onChange={handleChange}
+          disabled={showAnswer}
+          autoComplete="one-time-code"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck={false}
+          data-lpignore="true"
+        />
+      </div>
     </div>
   );
 };
