@@ -657,12 +657,19 @@ body {
     .glass-card {
         padding: 1.5rem;
         border-radius: 16px;
+        /* Ensure card is centered horizontally and vertically */
+        margin-top: 20px;
     }
 
     .aura-core {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         width: 120px;
         height: 120px;
-        margin-bottom: 1.5rem;
+        margin: 0;
+        z-index: 20;
     }
 
     .aura-ring-1 {

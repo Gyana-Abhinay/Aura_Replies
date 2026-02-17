@@ -97,16 +97,20 @@ const PetitionInput: React.FC<PetitionInputProps> = ({
       <input
         ref={inputRef}
         id="petition"
+        name="petition_field_no_suggest"
         type="text"
         placeholder="Begin your petition..."
         className={`form-input ${isHiding ? 'hiding-glow' : ''}`}
         value={petitionDisplay}
         onChange={handleChange}
         disabled={showAnswer}
-        autoComplete="off"
+        autoComplete="new-password"
         autoCorrect="off"
         autoCapitalize="off"
         spellCheck={false}
+        data-lpignore="true"
+        data-form-type="other"
+        aria-autocomplete="none"
       />
     </div>
   );
