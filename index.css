@@ -426,6 +426,7 @@ body {
     color: var(--text-primary);
     outline: none;
     transition: all 0.3s ease;
+    appearance: none;
     -webkit-appearance: none;
 }
 
@@ -478,6 +479,7 @@ body {
     animation: gradient-shift 4s ease infinite;
     box-shadow: 0 4px 20px rgba(0, 240, 255, 0.3), 0 0 40px rgba(168, 85, 247, 0.15);
     transition: all 0.3s ease;
+    appearance: none;
     -webkit-appearance: none;
 }
 
@@ -608,6 +610,7 @@ body {
     color: var(--cyan);
     cursor: pointer;
     transition: all 0.3s ease;
+    appearance: none;
     -webkit-appearance: none;
 }
 
