@@ -417,10 +417,13 @@ body {
 
 .form-input {
     width: 100%;
+    height: 3.5rem;
+    /* Fixed height strategy */
     background: rgba(5, 2, 20, 0.7);
     border: 1px solid rgba(0, 240, 255, 0.2);
     border-radius: 12px;
-    padding: 0.85rem 1.1rem;
+    padding: 0 1.1rem;
+    /* Horizontal padding only */
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
     color: var(--text-primary);
@@ -471,8 +474,9 @@ body {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    /* Match input box model: padding + border width */
-    padding: 0.85rem 1.1rem;
+    /* Match input box model exactly: fixed height, horizontal padding only */
+    height: 3.5rem;
+    padding: 0 1.1rem;
     border: 1px solid transparent;
 
     /* Text alignment */
@@ -485,6 +489,8 @@ body {
     /* Re-enable flex for perfect vertical centering */
     display: flex;
     align-items: center;
+    white-space: pre;
+    overflow: hidden;
 }
 
 
