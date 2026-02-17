@@ -487,8 +487,8 @@ body {
     color: var(--text-primary);
     z-index: 5;
 
-    /* Visual Nudge: Move text down 1px for perfect center */
-    transform: translateY(1px);
+    /* Visual Nudge: Move text down 3px to counter high font baseline */
+    transform: translateY(3px);
 
     /* Robust vertical centering */
     display: flex;
