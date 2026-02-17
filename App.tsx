@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useRef, useEffect, useMemo, ChangeEvent } from 'react';
+import GalaxyBackground from './components/GalaxyBackground';
 
 // --- EXPANDED RANDOM ANSWERS ---
 const randomAnswers = [
@@ -17,39 +18,7 @@ const randomAnswers = [
 
 // --- BACKGROUND COMPONENTS ---
 
-const Stars: React.FC = () => {
-  const stars = useMemo(() =>
-    Array.from({ length: 80 }, (_, i) => ({
-      id: i,
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      size: Math.random() * 2 + 1,
-      duration: Math.random() * 4 + 2,
-      delay: Math.random() * 5,
-      brightness: Math.random() * 0.6 + 0.3,
-    }))
-    , []);
-
-  return (
-    <div className="stars">
-      {stars.map(s => (
-        <div
-          key={s.id}
-          className="star"
-          style={{
-            left: `${s.left}%`,
-            top: `${s.top}%`,
-            width: `${s.size}px`,
-            height: `${s.size}px`,
-            '--duration': `${s.duration}s`,
-            '--delay': `${s.delay}s`,
-            '--brightness': s.brightness,
-          } as React.CSSProperties}
-        />
-      ))}
-    </div>
-  );
-};
+// Stars component removed (replaced by GalaxyBackground)
 
 // --- CHILD COMPONENTS ---
 
@@ -352,8 +321,7 @@ const App: React.FC = () => {
   return (
     <>
       {/* Background layers */}
-      <div className="cosmic-bg" />
-      <Stars />
+      <GalaxyBackground />
       <div className="floating-orb orb-1" />
       <div className="floating-orb orb-2" />
       <div className="floating-orb orb-3" />
